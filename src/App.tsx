@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef } from "react";
+import ReactDOM from "react-dom";
+import createScrollSnap from "scroll-snap";
+import "./App.css";
 
 function App() {
+  const container = useRef(null);
+
+  useEffect(() => {
+    const element = container.current;
+
+    if (element)
+      createScrollSnap(
+        element,
+        {
+          snapDestinationY: "90%",
+        },
+        () => console.log("snapped")
+      );
+
+    return;
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="container" ref={container}>
+      <div className="page first-page">
+        <div>I</div>
+        <div className="hint">scroll down</div>
+      </div>
+      <div className="page second-page">
+        <div>II</div>
+      </div>
+      <div className="page third-page">
+        <div>III</div>
+      </div>
+      <div className="page fourth-page">
+        <div>IV</div>
+        <div className="hint">scroll up</div>
+      </div>
     </div>
   );
 }
