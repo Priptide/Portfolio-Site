@@ -23,19 +23,33 @@ body {
   position: relative;
   width: 100%;
   padding: 20px;
-  box-sizing: border-box;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  color: #000;
-  background-color: #e6e6e6;
+  font-size: 60px;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
 }
+
+/* .first-page:after {
+	z-index: -1;
+	position: absolute;
+    top: 98.1%;
+    left: 70%;
+    margin-left: -25%;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: solid 50px #e15915;
+    border-left: solid 50px transparent;
+    border-right: solid 50px transparent;
+} */
+
 .first-page {
-  height: 95%;
-  min-height: 95%;
+  height: 90%;
+  min-height: 90%;
 }
 .second-page {
   height: 90%;
   min-height: 90%;
+  background-color: #000000;
 }
 .third-page {
   height: 90%;
@@ -49,4 +63,35 @@ body {
   position: absolute;
   bottom: 20%;
   font-size: 16px;
+}
+
+.bio{
+  position: absolute;
+  top:5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 30px;
+  text-align: center;
+}
+
+.links{
+  position: absolute;
+  bottom: 20%;
+  left:10%;
+  display:flex;
+  width:80%;
+  height: 8%;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.links button{
+  /* TODO: Add neon look too the buttons. */
+  width:150px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #8008c5;
+  color:white;
+  border: none;
+  border-radius: 15%;
 }
