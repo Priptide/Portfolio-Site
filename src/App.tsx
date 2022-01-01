@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import createScrollSnap from "scroll-snap";
 import "./App.css";
+import Projects from "./Projects";
 
 function App() {
   const container = useRef(null);
@@ -14,7 +15,7 @@ function App() {
         {
           snapDestinationY: "90%",
         },
-        () => console.log(container)
+        () => {}
       );
 
     return;
@@ -45,7 +46,14 @@ function App() {
         </div>
       </div>
       <div className="page fourth-page">
-        <div>IV</div>
+        <div>projects</div>
+        <Projects />
+      </div>
+      <div className="page fifth-page">
+        <div>skill set</div>
+      </div>
+      <div className="page sixth-page">
+        <div>my socials</div>
         <div className="hint">scroll up</div>
       </div>
     </div>
